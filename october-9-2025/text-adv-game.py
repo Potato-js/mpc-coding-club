@@ -1,5 +1,6 @@
 # A really basic text adventure game
 
+
 def prompt(options):
     # Ask until a valid choice is entered
     while True:
@@ -8,8 +9,11 @@ def prompt(options):
             return choice
         print(f"Type one of: {', '.join(options)}")
 
+
 def intro():
-    print("Wake up in a small room with a wooden door to the north and a dark tunnel to the east.")
+    print(
+        "Wake up in a small room with a wooden door to the north and a dark tunnel to the east."
+    )
     print("What now? (north/east/look)")
     choice = prompt({"north", "east", "look"})
     if choice == "north":
@@ -17,11 +21,16 @@ def intro():
     elif choice == "east":
         tunnel()
     else:
-        print("The room is bare: a dusty cot, a flickering lamp, and footprints leading north.")
+        print(
+            "The room is bare: a dusty cot, a flickering lamp, and footprints leading north."
+        )
         return intro()
 
+
 def hall():
-    print("Enter a stone hall. A guard naps by a lever. There’s a locked gate to the north.")
+    print(
+        "Enter a stone hall. A guard naps by a lever. There’s a locked gate to the north."
+    )
     print("Actions? (sneak/lever/back)")
     choice = prompt({"sneak", "lever", "back"})
     if choice == "sneak":
@@ -36,6 +45,7 @@ def hall():
         exit_gate()
     else:
         intro()
+
 
 def tunnel():
     print("Crawl into a damp tunnel. It splits ahead.")
@@ -52,6 +62,7 @@ def tunnel():
     else:
         intro()
 
+
 def exit_gate():
     print("Push through the gate into sunlight. Freedom!")
     print("Play again? (yes/no)")
@@ -61,9 +72,11 @@ def exit_gate():
     else:
         print("Thanks for playing!")
 
+
 def main():
     print("=== Tiny Adventure ===")
     intro()
+
 
 if __name__ == "__main__":
     main()
